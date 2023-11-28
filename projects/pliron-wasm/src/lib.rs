@@ -6,7 +6,8 @@
 
 mod errors;
 
-pub use crate::errors::{Error, Result};
+mod attrs;
+mod ops;
 
-pub struct StringAttr(String);
-impl_attr!(StringAttr, "string", "builtin");
+pub use crate::attrs::*;
+pub use crate::ops::*;
