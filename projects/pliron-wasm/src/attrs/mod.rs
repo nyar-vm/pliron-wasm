@@ -1,7 +1,7 @@
 mod printable;
 mod parsable;
 mod verify;
-mod interfaces;
+mod interface;
 
 use pliron::parsable::{Parsable, StateStream};
 use std::fmt::Formatter;
