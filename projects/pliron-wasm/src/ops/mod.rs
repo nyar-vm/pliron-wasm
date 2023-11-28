@@ -1,10 +1,13 @@
 use pliron::{declare_op, impl_attr};
 
+mod parsable;
+mod printable;
+mod verify;
+mod interface;
 
-declare_op!(
-    ///
-    UnreachableOp,
-    "unreachable",
-    "wasm"
-);
+use pliron::parsable::{Parsable, StateStream};
+use std::fmt::Formatter;
+use pliron::context::Context;
+use pliron::printable::{Printable, State};
 
+include!("defs.rs");
