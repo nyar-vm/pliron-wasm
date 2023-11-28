@@ -12,6 +12,8 @@ edition = "2021"
 exclude = ["package.json", "tests/**"]
 
 [dependencies]
+inventory = "0.3.13"
+paste = "1.0.14"
 combine = "4.6.6"
 pliron = "0.1.7"
 

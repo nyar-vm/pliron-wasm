@@ -5,3 +5,9 @@ impl Printable for I32Attr {
         todo!()
     }
 }
+
+impl Printable for FuncrefAttr {
+    fn fmt(&self, ctx: &Context, state: &State, f: &mut Formatter<'_>) -> std::fmt::Result {
+        todo!()
+    }
+}
