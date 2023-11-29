@@ -1,4 +1,3 @@
-
 impl_attr!(I32Attr, "i32", "wasm");
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub struct I32Attr {
@@ -51,4 +50,37 @@ pub enum ValueAttr {
     V128(V128Attr),
     Funcref(FuncRefAttr),
     Externref(ExternRefAttr),
+}
+
+impl_attr!(RefAttr, "reftype", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub enum RefAttr {
+    Funcref(FuncRefAttr),
+    Externref(ExternRefAttr),
+}
+
+
+impl_attr!(FuncAttr, "functype", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct FuncAttr {
+    input: Vec<ValueAttr>,
+    output: Vec<ValueAttr>,
+}
+impl_attr!(LimitsAttr, "limits", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct LimitsAttr {
+    min: u32,
+    max: Option<u32>,
+}
+impl_attr!(MemAttr, "memtype", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct MemAttr {
+    limits: LimitsAttr,
+}
+
+impl_attr!(TableAttr, "tabletype", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct TableAttr {
+    ptr: RefAttr,
+    limits: LimitsAttr,
 }
