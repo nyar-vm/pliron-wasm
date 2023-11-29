@@ -84,3 +84,10 @@ pub struct TableAttr {
     ptr: RefAttr,
     limits: LimitsAttr,
 }
+
+impl_attr!(GlobalAttr, "globaltype", "wasm");
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct GlobalAttr {
+    value: ValueAttr,
+    mutable: bool,
+}
